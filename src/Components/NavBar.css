@@ -14,34 +14,36 @@ body {
 
 #logo {
     display: inline-flex;
-    width: 10%;
-    margin-left: 5%;
+    width: 14%;
+    margin-left: 3%;
 }
 
 h1 {
-    margin-top: -4%;
+    margin-top: -6%;
     margin-left: 15%;
     font-style: italic;
-    font-size: 35px;
+    font-size: 45px;
 }
   
 nav {
+    display: inline-flex;
     margin-left: 70%;
 }
 
 a {
   display: inline-flex;
-  margin-left: 5%;
-  font-size: 18px;
+  margin-left: 9%;
+  font-size: 24px;
   color: purple;
   font-family: "Ramaraja", serif;
   font-family: "Spectral", serif;
 }
 
 #icon {
-    display: flex;
-    margin-left: 90%;
-    margin-top: -10px;
+    display: inline-flex;
+    width: 14%;
+    margin-left: 10%;
+    margin-top: -20px;
 }
 
 hr {

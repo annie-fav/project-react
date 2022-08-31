@@ -1,6 +1,9 @@
 import React from 'react';
-import logo from '../Assets/logo.jpg'
 import './NavBar.css'
+import logo from '../Assets/logo.jpg'
+import icon from '../Assets/cart-icon.jpg'
+
+
 
 const NavBar = () => {
     return (
@@ -11,8 +14,8 @@ const NavBar = () => {
             <a href="">Home</a>
             <a href="">Shop</a>
             <a href="">Contact</a>
+            <img id="icon" src={icon} alt="cart"/>
         </nav>
-        <img id="icon" src="" alt="carrito"/>
         <hr></hr>
         </>
     )
