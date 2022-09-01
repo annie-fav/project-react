@@ -1,0 +1,20 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: solid;
+    border-color: white;
+    margin-left: 20px;
+}
+
+
+.card {
+    border-style: double;
+    border-color: pink;
+    width: 240px;
+    height: 350px;
+    margin-left: 4%;
+    margin-top: 5%;
+    margin-right: 4%;
+    margin-bottom: 4%;;
+}
