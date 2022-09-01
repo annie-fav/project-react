@@ -1,7 +1,7 @@
 import React from 'react';
-import './NavBar.css'
-import logo from '../Assets/logo.jpg'
-import icon from '../Assets/cart-icon.jpg'
+import '../Header/NavBar.css'
+import logo from '../../Assets/logo.jpg'
+import icon from '../../Assets/cart-icon.jpg'
 
 
 
