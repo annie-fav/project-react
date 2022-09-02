@@ -1,20 +1,30 @@
 import React from 'react';
 import '../Header/NavBar.css'
 import logo from '../../Assets/logo.jpg'
-import icon from '../../Assets/cart-icon.jpg'
+import CartWidget from '../Header/CartWidget'
 
 
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const { title } = props;
+
+  const categorys = [
+    { id: 0, name: "T-shirt"},
+    { id: 1, name: "Trousers"},
+    { id: 2, name: "Socks"},
+    { id: 3, name: "Dresses"},
+    { id: 4, name: "Home"}
+  ]
+
     return (
         <>
         <img id="logo" src={logo} alt="logo"/>
-        <h1>CoderHouse</h1>
+        <h1>{title}</h1>
         <nav>
-            <a href="">Home</a>
-            <a href="">Shop</a>
-            <a href="">Contact</a>
-            <img id="icon" src={icon} alt="cart"/>
+            { categorys.map( (categorys) => {
+            return <a key={categorys.id} href=''>{categorys.name}</a>
+             }) }
+            <CartWidget/>
         </nav>
         <hr></hr>
         </>

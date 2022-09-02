@@ -29,13 +29,13 @@ h1 {
   
 nav {
     display: inline-flex;
-    margin-left: 70%;
+    margin-left: 50%;
 }
 
 a {
   display: inline-flex;
-  margin-left: 7%;
   font-size: 24px;
+  margin-left: 4%;
   color: purple;
   font-family: "Ramaraja", serif;
   font-family: "Spectral", serif;
@@ -43,7 +43,7 @@ a {
 
 #icon {
     display: inline-flex;
-    width: 14%;
+    width: 10%;
     margin-left: 10%;
     margin-top: -20px;
 }

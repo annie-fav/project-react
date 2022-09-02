@@ -7,6 +7,12 @@
     margin-left: 20px;
 }
 
+.Welcome {
+    text-align: center;
+    font-size: 30px;
+    font-style:italic;
+    
+}
 
 .card {
     border-style: double;
