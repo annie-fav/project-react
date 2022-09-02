@@ -13,7 +13,8 @@ const NavBar = (props) => {
     { id: 1, name: "Trousers"},
     { id: 2, name: "Socks"},
     { id: 3, name: "Dresses"},
-    { id: 4, name: "Home"}
+    { id: 4, name: "Shoes"},
+    { id: 5, name: "Home"}
   ]
 
     return (
