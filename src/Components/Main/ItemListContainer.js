@@ -1,5 +1,5 @@
-import { getDefaultNormalizer } from '@testing-library/react'
 import React from 'react'
+
 import './ItemListContainer.css'
 import ItemCount from './ItemCount'
 
@@ -30,7 +30,7 @@ const ItemListContainer = (props) => {
             <div className="cards-container">
                 {cards.map((cards) => {
                     return <div className="card" key={cards.id} href=''>
-                        <img className="img-card" src={cards.img} />
+                        <img className="img-card" src={cards.img} alt={cards.id} />
                         <p className="title">{cards.title}</p>
                         <p className="price">Price: {cards.price}</p>
                         <hr></hr>

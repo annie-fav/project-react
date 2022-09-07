@@ -8,7 +8,7 @@ const ItemCount = props => {
   const [contador, setContador] = useState(0)
 
   const decrement = () => {
-    if(contador > 0){
+    if (contador > 0) {
       setContador(contador - 1)
     }
   }

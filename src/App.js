@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="page-layout">
       <div>
-        <NavBar title="Coderhouse"/>
+        <NavBar title="Coderhouse" />
       </div>
       <div>
         <ItemListContainer welcome="Welcome to the Page!" />

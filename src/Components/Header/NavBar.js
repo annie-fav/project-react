@@ -9,27 +9,27 @@ const NavBar = (props) => {
   const { title } = props;
 
   const categorys = [
-    { id: 0, name: "T-shirt"},
-    { id: 1, name: "Trousers"},
-    { id: 2, name: "Socks"},
-    { id: 3, name: "Dresses"},
-    { id: 4, name: "Shoes"},
-    { id: 5, name: "Home"}
+    { id: 0, name: "T-shirt" },
+    { id: 1, name: "Trousers" },
+    { id: 2, name: "Socks" },
+    { id: 3, name: "Dresses" },
+    { id: 4, name: "Shoes" },
+    { id: 5, name: "Home" }
   ]
 
-    return (
-        <>
-        <img id="logo" src={logo} alt="logo"/>
-        <h1>{title}</h1>
-        <nav>
-            { categorys.map( (categorys) => {
-            return <a key={categorys.id} href=''>{categorys.name}</a>
-             }) }
-            <CartWidget/>
-        </nav>
-        <hr></hr>
-        </>
-    )
+  return (
+    <>
+      <img id="logo" src={logo} alt="logo" />
+      <h1>{title}</h1>
+      <nav>
+        {categorys.map((categorys) => {
+          return <button key={categorys.id}>{categorys.name}</button>
+        })}
+        <CartWidget />
+      </nav>
+      <hr></hr>
+    </>
+  )
 }
 
 export default NavBar
