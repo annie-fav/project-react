@@ -23,7 +23,7 @@ const NavBar = (props) => {
       <h1>{title}</h1>
       <nav>
         {categorys.map((categorys) => {
-          return <button key={categorys.id}>{categorys.name}</button>
+          return <button className="navbar" key={categorys.id}>{categorys.name}</button>
         })}
         <CartWidget />
       </nav>

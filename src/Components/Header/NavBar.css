@@ -51,3 +51,9 @@ a {
 hr {
     color: pink;
 }
+
+.navbar {
+  color: rgb(196, 106, 179);
+  border-radius: 40%;
+  background-color: black;
+}
