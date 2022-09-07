@@ -4,6 +4,7 @@ import NavBar from './Components/Header/NavBar';
 import Footer from '../src/Components/Footer/Footer'
 import ItemListContainer from './Components/Main/ItemListContainer';
 
+
 const App = () => {
   return (
     <div className="page-layout">
