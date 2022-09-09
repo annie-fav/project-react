@@ -45,6 +45,18 @@
   height: 100vh;
   flex-wrap: nowrap;
   align-content: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: stretch;
+}
+
+.page-header {
+  flex-grow: 0;
+}
+
+.page-body {
+  flex-grow: 1;
+}
+
+.page-footer {
+  flex-grow: 0;
 }

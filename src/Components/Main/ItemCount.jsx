@@ -20,12 +20,17 @@ const ItemCount = props => {
   }
 
   const onAdd = () => {
-    swal({
-      title: "Good job!",
-      text: "You add the product Sucees!",
-      icon: "success",
-      button: "Aww yiss!",
-    })
+
+    if (contador >= 1) {
+      swal({
+        title: "Good job!",
+        text: "You add the product Sucees!",
+        icon: "success",
+        button: "Aww yiss!",
+      })
+    } else {
+      swal("Sorry", "You didn't put any object on the cart");
+    }
   }
 
   return (

@@ -8,13 +8,16 @@ import ItemListContainer from './Components/Main/ItemListContainer';
 const App = () => {
   return (
     <div className="page-layout">
-      <div>
+      <div className="page-header">
         <NavBar title="Coderhouse" />
       </div>
-      <div>
+      <div className="page-body">
         <ItemListContainer welcome="Welcome to the Page!" />
       </div>
-      <div>
+      {/* <div>
+        <ItemDetailContainer />
+      </div> */}
+      <div className="page-footer">
         <Footer />
       </div>
     </div>
