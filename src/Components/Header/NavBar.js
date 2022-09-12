@@ -4,7 +4,6 @@ import logo from '../../Assets/logo.jpg'
 import CartWidget from '../Header/CartWidget'
 
 
-
 const NavBar = (props) => {
   const { title } = props;
 

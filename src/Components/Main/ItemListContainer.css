@@ -99,3 +99,44 @@ hr {
     text-align: center;
     width: 10%;
 }
+
+.swal-overlay {
+    background-color: rgba(165, 43, 147, 0.45);
+  }
+
+.swal-modal {
+    background-color: white;
+    border: 3px solid white;
+  }
+
+  .swal-title {
+    color: black;
+    margin: 0px;
+    font-size: 24px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+    margin-bottom: 28px;
+  }
+
+.swal-text {
+    background-color:rgba(151, 11, 111, 0.69);;
+    padding: 17px;
+    border: 1px solid #F0E1A1;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: white;
+  }
+
+  .swal-button {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: #6f0257;
+    font-size: 12px;
+    border: 1px solid #bc1695;
+    text-shadow: 0px -1px 0px rgba(170, 23, 129, 0.3); 
+  }
+
+  .swal-button--confirm:hover {
+      background: black;
+      color: white;       
+  }

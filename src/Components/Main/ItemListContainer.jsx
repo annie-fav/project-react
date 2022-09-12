@@ -20,9 +20,9 @@ const ITEMS = [
     { id: 10, title: "Socks Man", price: "$$7", category: "Socks", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPmPN6bj6Nja8Fy91tSH3WDclJU9Nvq-nmLw&usqp=CAU" },
     { id: 11, title: "Jeans Man", price: "$$21", category: "Trousers", img: "https://oldnavy.gap.com/webcontent/0020/007/736/cn20007736.jpg" },
     { id: 12, title: "Joggins Man", price: "$$19", category: "Trousers", img: "https://5.imimg.com/data5/GK/JK/MY-1705565/mfrangrrjl1e_1-500x500.jpg" },
-    { id: 13, title: "Dress Red", price: "$$34", category: "Dresses", img: "https://img.davidsbridal.com/is/image/DavidsBridalInc/Set-F20064-11243439-Apple?wid=407&hei=562&bgc=255,255,255&defaultImage=DavidsBridalInc/PDP_No_Image_Available_Message" },
-    { id: 14, title: "Dress Green", price: "$$35", category: "Dresses", img: "https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300892483SAGE_2_1024x1024.jpg?v=1647033311" },
-    { id: 15, title: "Dress Blue", price: "$$37", category: "Dresses", img: "https://www.laura.ca/dw/image/v2/BBFF_PRD/on/demandware.static/-/Sites-laura-master/default/dw986f6a20/images/hi-res/4010103-0816-433_1.jpg?sw=350" }
+    { id: 13, title: "Dress", price: "$$34", category: "Dresses", img: "https://img.davidsbridal.com/is/image/DavidsBridalInc/Set-F20064-11243439-Apple?wid=407&hei=562&bgc=255,255,255&defaultImage=DavidsBridalInc/PDP_No_Image_Available_Message" },
+    { id: 14, title: "Dress", price: "$$35", category: "Dresses", img: "https://cdn.shopify.com/s/files/1/0266/6276/4597/products/300892483SAGE_2_1024x1024.jpg?v=1647033311" },
+    { id: 15, title: "Dress", price: "$$37", category: "Dresses", img: "https://www.laura.ca/dw/image/v2/BBFF_PRD/on/demandware.static/-/Sites-laura-master/default/dw986f6a20/images/hi-res/4010103-0816-433_1.jpg?sw=350" }
 ]
 
 const ItemListContainer = (props) => {

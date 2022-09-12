@@ -38,6 +38,16 @@
   }
 }
 
+body {
+  background-color: black;
+  color: pink;
+  height: 100%;
+  margin-left: 4%;
+  margin-right: 4%;
+  font-family: "Ramaraja", serif;
+  font-family: "Spectral", serif;
+}
+
 .page-layout {
   display: flex;
   flex-direction: column;
