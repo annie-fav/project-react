@@ -15,11 +15,11 @@
     display: inline-flex;
   }
   
-  img {
+ #img-detail {
     position: relative;
     overflow: hidden;
-    width: 120%;
-    height: 240px;
+    width: 160%;
+    height: 40%;
     
     margin-top: 10px;
     margin-left: 20px;

@@ -9,7 +9,7 @@ const ItemDetail = (props) => {
         <div>
             <div id="container-detail-card">
                 <div id="container-img-size-color">
-                    <img src={item.img} alt={item.id}/>
+                    <img id="img-detail" src={item.img} alt={item.id}/>
                     <div id="select">
                     <button id="p-color">Choose a Color:
                         <select>
