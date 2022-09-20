@@ -1,13 +1,9 @@
 import React from 'react'
-import { useState } from 'react';
 
-
-import './ItemListContainer.css'
+import './ItemListContainer.css';
 
 const Item = (props) => {
-    const { item } = props
-
-    const [openDetail, setOpenDetail] = useState(false)
+    const { item, setSelectedId } = props
 
     return (
         <div>
@@ -16,8 +12,7 @@ const Item = (props) => {
                 <p className="title">{item.title}</p>
                 <p className="price">Price: {item.price}</p>
                 <hr></hr>
-                <button className="seeDetail" onClick={() => { setOpenDetail(true)} }>See Detail</button>
-                {/* <ItemDetail itemId={item.id} openDetail={openDetail} setOpenDetail={setOpenDetail} /> */}
+                <button className="seeDetail" onClick={() => { setSelectedId(item.id)} }>See Detail</button>
             </div>
             
         </div>

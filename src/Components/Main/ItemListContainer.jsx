@@ -8,9 +8,11 @@ import './ItemListContainer.css';
 
 
 const ItemListContainer = (props) => {
-    const { welcome } = props;
+    const { welcome, setSelectedId } = props;
+
     const [items, setItemList] = useState([])
     const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
         setLoading(true);
@@ -40,7 +42,7 @@ const ItemListContainer = (props) => {
             </div>
             <br></br>
             <div>
-                {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemList items={items} />)}
+                {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemList setSelectedId={setSelectedId} items={items} />)}
             </div>
         </div>
     )

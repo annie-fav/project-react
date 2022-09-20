@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import swal from 'sweetalert';
+import './ItemDetail.css'
 
 
 const ItemCount = props => {
@@ -35,13 +36,14 @@ const ItemCount = props => {
 
   return (
     <>
+       
       <div className="containerButton">
         <button className="buttonLeft" onClick={decrement}>-</button>
         <p className="pContador">{contador}</p>
         <button className="buttonRight" onClick={increment} stock="9">+</button>
       </div>
       <br></br>
-      <hr></hr>
+      <hr/>
       <button className="AddtoCart" onClick={onAdd}>Add to Cart</button>
     </>
   )

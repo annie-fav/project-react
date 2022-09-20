@@ -5,8 +5,11 @@ import { CircleLoader } from 'react-spinners';
 
 
 const ItemDetailContainer = (props) => {
-  const { item_id } = props
-  const [loading, setLoading] = useState(false)
+  const { selectedId = null } = props
+
+  const [ item, setItem ] = useState()
+  // const [ product, setProduct ] = useState({})
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setLoading(true);
@@ -24,17 +27,17 @@ const ItemDetailContainer = (props) => {
         .then((data) => {
             console.log(data)
             setLoading(false)
-            setItemList(data)
+            setItem(data.find(x => x.id === selectedId))
         })
 
-}, [])
+  }, [selectedId])
 
 
   return (
 
     <>
       <div>
-        {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemDetail items={item.id} />)}
+        {loading ? <CircleLoader className="spinner" color="#d636b8" /> : <ItemDetail item={item} />}
       </div>
     </>
   )

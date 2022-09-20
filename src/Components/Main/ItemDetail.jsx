@@ -3,16 +3,14 @@ import './ItemDetail.css';
 import ItemCount from './ItemCount'
 
 const ItemDetail = (props) => {
+    const { item } = props;
 
-    const { itemId, openDetail, setOpenDetail } = props;
-
-    return (
+    return !item ? null : (
         <div>
             <div id="container-detail-card">
-                <div id="img-size">
-                    <img src={itemId.img} />
-                </div>
-                <div id="select">
+                <div id="container-img-size-color">
+                    <img src={item.img} alt={item.id}/>
+                    <div id="select">
                     <button id="p-color">Choose a Color:
                         <select>
                             <option>Red</option>
@@ -28,13 +26,13 @@ const ItemDetail = (props) => {
                             <option>M</option>
                             <option>L</option>
                             <option>XL</option>
-                        </select>
+                        </select>    
                     </button>
-                    <br />
-                    <button id="button-price">{itemId.price}</button>
+                    <button id="button-price">{item.price}</button>
+                  </div>
                 </div>
+                <ItemCount stock="9" />
             </div>
-            <ItemCount stock="9" />
         </div>
     )
 }
