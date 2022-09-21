@@ -6,34 +6,48 @@ import { CircleLoader } from 'react-spinners';
 import ItemList from './ItemList';
 import './ItemListContainer.css';
 
+import { useParams } from 'react-router-dom'
+
 
 const ItemListContainer = (props) => {
     const { welcome, setSelectedId } = props;
 
+    let { IdCategory } = useParams();
+
     const [items, setItemList] = useState([])
     const [loading, setLoading] = useState(false)
 
+    const URL_BASE = '/data.json'
 
     useEffect(() => {
+
         setLoading(true);
 
-        fetch('/data.json', {
+        const promiseRes = fetch(URL_BASE, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
         })
+
+        promiseRes
             .then((response) => {
-                const data = response.json()
-                return data
+                const parsedData = response.json()
+                return parsedData
             })
             .then((data) => {
                 console.log(data)
                 setLoading(false)
-                setItemList(data)
+                if (IdCategory) {
+                    const filteredItems = data.filter(product => product.category === IdCategory)
+                    setItemList(filteredItems)
+                } else {
+                    setItemList(data)
+                }
             })
 
-    }, [])
+
+    }, [IdCategory])
 
     return (
         <div className=''>

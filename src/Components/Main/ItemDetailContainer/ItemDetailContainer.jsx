@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { CircleLoader } from 'react-spinners';
-
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = (props) => {
   const { selectedId = null } = props
@@ -10,6 +10,8 @@ const ItemDetailContainer = (props) => {
   const [ item, setItem ] = useState()
   // const [ product, setProduct ] = useState({})
   const [loading, setLoading] = useState(true)
+
+  let { IdDetail } = useParams();
 
   useEffect(() => {
     setLoading(true);
@@ -30,7 +32,7 @@ const ItemDetailContainer = (props) => {
             setItem(data.find(x => x.id === selectedId))
         })
 
-  }, [selectedId])
+  }, [IdDetail])
 
 
   return (

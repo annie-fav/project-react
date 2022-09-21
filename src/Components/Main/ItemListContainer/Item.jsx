@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './ItemListContainer.css';
 
@@ -12,7 +13,9 @@ const Item = (props) => {
                 <p className="title">{item.title}</p>
                 <p className="price">Price: {item.price}</p>
                 <hr></hr>
+                <Link to={"/detail/" + item.id}>
                 <button className="seeDetail" onClick={() => { setSelectedId(item.id)} }>See Detail</button>
+                </Link>
             </div>
             
         </div>

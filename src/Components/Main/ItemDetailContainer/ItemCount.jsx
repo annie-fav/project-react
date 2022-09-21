@@ -43,7 +43,7 @@ const ItemCount = props => {
         <button className="buttonRight" onClick={increment} stock="9">+</button>
       </div>
       <br></br>
-      <hr/>
+      {/* <hr/> */}
       <button className="AddtoCart" onClick={onAdd}>Add to Cart</button>
     </>
   )
