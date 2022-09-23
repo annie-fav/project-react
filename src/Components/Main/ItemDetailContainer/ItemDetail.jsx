@@ -4,7 +4,7 @@ import './ItemDetail.css';
 import ItemCount from './ItemCount'
 
 const ItemDetail = (props) => {
-    const { item } = props;
+    const { item, addItemToCart } = props;
 
     console.log("/detail/" + item.id)
 
@@ -34,7 +34,7 @@ const ItemDetail = (props) => {
                             <button id="button-price">{item.price}</button>
                     </div>
                 </div>
-                <ItemCount stock="9" />
+                <ItemCount item={item} addItemToCart={addItemToCart} stock="9" />
             </div>
         </div>
     )

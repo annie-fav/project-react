@@ -94,12 +94,15 @@ hr {
 
 
   .seeDetail {
-    margin-top: -30px;
-    width: 210px;
-    height: 30px;
-    background-color: white;
-    border-style: double;
-    color: purple;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 230px;
+    height: 35px;
+    background-color: black;
+    /* border-style: solid; */
+    border-color: black;
+    border-radius: 40px;
+    color: rgb(203, 29, 136);
     text-align: center;
 }
 

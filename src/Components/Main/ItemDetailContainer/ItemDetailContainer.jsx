@@ -5,7 +5,7 @@ import { CircleLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = (props) => {
-  const { selectedId = null } = props
+  const { selectedId = null, addItemToCart } = props
 
   const [ item, setItem ] = useState()
   // const [ product, setProduct ] = useState({})
@@ -36,10 +36,9 @@ const ItemDetailContainer = (props) => {
 
 
   return (
-
     <>
       <div>
-        {loading ? <CircleLoader className="spinner" color="#d636b8" /> : <ItemDetail item={item} />}
+        {loading ? <CircleLoader className="spinner" color="#d636b8" /> : <ItemDetail addItemToCart={addItemToCart} item={item} />}
       </div>
     </>
   )
