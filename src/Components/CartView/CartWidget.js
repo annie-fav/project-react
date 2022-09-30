@@ -8,9 +8,9 @@ const CartWidget = () => {
 
     return (
 
-        <div className='cart-widget-container'>
-             <p>{quantity}</p>
-            <img id="icon" src={icon} alt="cart" />
+        <div className='cart-widget-container'> 
+        <p className="quantity">{quantity}</p>
+        <img id="icon" src={icon} alt="cart" />
         </div>
     )
 }
