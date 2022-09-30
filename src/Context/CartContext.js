@@ -7,37 +7,46 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
     const [quantity, setQuantity] = useState(0)
-
+    
+    // Funciones que se ejecutan cuando cambia el estado del cart
+    // Para recalcular valores
     const updateQuantity = () => {
-        const _quantity = 0;
+        let _quantity = 0;
         cart.forEach((item) => {
             _quantity = _quantity + item.quantity
         })
-        setQuantity(quantity)
+        console.log('por aca se configura quantity')
+        setQuantity(_quantity)
     }
 
     useEffect(() => {
+        console.log('cart changed event', cart)
         updateQuantity()
     }, [cart])
 
-    const addItem = (item, contador) => {
-        console.log('add item executed, values to save:', { item, contador })
-        console.log('cart', { item, contador })
-        const existItem = cart.findIndex(itemCart => itemCart.item.id === item.id)
-        if (existItem !== -1) {
-            setCart([...cart, { item, contador }])
+    // Funciones principales para cambiar el estado
+    // del cart
+    const addItem = (item, quantity) => {
+        console.log('add item executed, values to save:', { item, quantity })
+        console.log('cart', cart) // []
+
+        const itemIndex = cart.findIndex(itemCart => itemCart.item.id === item.id)
+
+        if (itemIndex === -1) {
+            const newItem = { item, quantity }
+            setCart([...cart, newItem])
         } else {
-            // const updatedItem = cart.filter(item => item !== cart[existItem])
-            // setCart([...cart, { ...updatedItem }])
+            cart[itemIndex].quantity = quantity
+            setCart([...cart])
         }
     }
 
-    const remove = (_id) => {
+    const removeItem = (_id) => {
         const arrayFilter = cart.filter((item) => { return item.id !== _id })
         setCart([...arrayFilter]);
     }
 
-    const isInList = (_id) => {
+    const isInCart = (_id) => {
         return cart.some((item) => item.id === _id);
     }
 
@@ -47,7 +56,7 @@ const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addItem, remove, isInList, clear, quantity }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, isInCart, clear, quantity }}>
             {children}
         </CartContext.Provider>
     )

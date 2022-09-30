@@ -33,7 +33,7 @@ const App = () => {
 
               <Route path="/categorys/:IdCategory" element={
                 <div className="page-body">
-                  <ItemListContainer welcome="Welcome to the Page!" />
+                  <ItemListContainer welcome="Welcome to the Store!" />
                 </div>} />
 
               <Route path="/cart" element={<Cart />} />
