@@ -1,12 +1,30 @@
-import React from 'react';
-
-import './ItemDetail.css';
+import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom'
+import swal from 'sweetalert'
 import ItemCount from './ItemCount'
+import './ItemDetail.css';
 
 const ItemDetail = (props) => {
-    const { item, addItemToCart } = props;
+    const { item, addItemToCart, quantity } = props
 
-    console.log("/detail/" + item.id)
+    const [contador, setContador] = useState(0)
+    const [isBought, setIsBought] = useState(false)
+    
+
+    const addToCart = () => {
+        if (contador >= 1) {
+            setIsBought(true);
+            addItemToCart(item, contador);
+            swal({
+                title: "Good job!",
+                text: `You added ${contador} products, Yayyy!`,
+                icon: "success",
+                button: "Aww yess!",
+            })
+        } else {
+            swal("Sorry", "You didn't put any object on the cart");
+        }
+    }
 
     return !item ? null : (
         <div>
@@ -31,10 +49,15 @@ const ItemDetail = (props) => {
                                 <option>XL</option>
                             </select>
                         </button>
-                            <button id="button-price">{item.price}</button>
+                        <button id="button-price">{item.price}</button>
                     </div>
                 </div>
-                <ItemCount item={item} addItemToCart={addItemToCart} stock="9" />
+                {!isBought ? <ItemCount contador={contador} setContador={setContador} stock={9} isBought={isBought} setIsBought={setIsBought} /> : null }
+                {!isBought ? (<button className="AddtoCart" onClick={addToCart}>Add to Cart</button>) : 
+                (<Link to="/cart">
+                    <button className="AddtoCart">Go to Checkout</button>
+                </Link>)}
+
             </div>
         </div>
     )

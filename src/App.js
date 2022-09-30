@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react'
 import './App.css';
 import NavBar from './Components/Header/NavBar';
 import Footer from '../src/Components/Footer/Footer'
@@ -7,63 +6,59 @@ import ItemListContainer from './Components/Main/ItemListContainer/ItemListConta
 import ItemDetailContainer from './Components/Main/ItemDetailContainer/ItemDetailContainer';
 import Cart from './Components/CartView/Cart'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Users from './Components/Examples/Users';
-
+// import Users from './Components/Examples/Users';
+import CartProvider from './Context/CartContext';
 
 
 const App = () => {
-  const [selectedId, setSelectedId] = useState(null)
-  const [cart, setCart] = useState([]);
-
-  const addItemToCart = (item, contador) => {
-    const cartItem = {
-      id: item.id,
-      item: {
-        ...item,
-      },
-      count: contador
-    }
-    cart.push(cartItem);
-    setCart(cart);
-  }
-
   return (
-    <BrowserRouter>
-      <div className="page-layout">
+    <>
 
-        <div className="page-header">
-          <NavBar title="Coderhouse" />
-        </div>
+      <BrowserRouter>
 
-        <Routes>
+        <CartProvider>
 
-          <Route path="/" element={
-            <div className="page-body">
-              <ItemListContainer welcome="Welcome to the Page!" setSelectedId={setSelectedId} />
-            </div>} />
+          <div className="page-layout">
 
-          <Route path="/categorys/:IdCategory" element={
-            <div className="page-body">
-              <ItemListContainer welcome="Welcome to the Page!" setSelectedId={setSelectedId} />
-            </div>} />
+            <div className="page-header">
+              <NavBar title="Coderhouse" />
+            </div>
 
-          <Route path="/cart" element={<Cart productList={cart} />} />
+            <Routes>
 
-          <Route path="/detail/:IdDetail" element={
-            <div>
-              <ItemDetailContainer addItemToCart={addItemToCart} selectedId={selectedId} />
-            </div>} />
+              <Route path="/" element={
+                <div className="page-body">
+                  <ItemListContainer welcome="Welcome to the Store!" />
+                </div>} />
 
-        </Routes>
+              <Route path="/categorys/:IdCategory" element={
+                <div className="page-body">
+                  <ItemListContainer welcome="Welcome to the Page!" />
+                </div>} />
 
-        {/* <Users/> */}
+              <Route path="/cart" element={<Cart />} />
 
-        <div className="page-footer">
-          <Footer />
-        </div>
+              <Route path="/detail/:IdDetail" element={
+                <div>
+                  <ItemDetailContainer />
+                </div>} />
 
-      </div>
-    </BrowserRouter>
+            </Routes>
+
+            {/* <Users/> */}
+
+            <div className="page-footer">
+              <Footer />
+            </div>
+
+          </div>
+
+        </CartProvider>
+
+      </BrowserRouter>
+
+
+    </>
   )
 }
 

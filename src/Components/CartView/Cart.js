@@ -1,20 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../../Context/CartContext';
+import CartItem from './CartItem'
+import './Cart.css'
 
-const CartItem = (props) => {
-    const { item } = props
-    return (
-        <div>
-            <p style={{ color: 'violet' }}>{JSON.stringify(item)}</p>
-        </div>
-    )
-}
+// const Cart = (props) => {
+//     const { cart } = useContext(CartContext);
+
+//     return (
+//         <>
+//             {cart.length === 0 ?
+//                 cart.map(item => (<CartItem item={item} />))
+//                 : (
+//                     <div>
+//                         {cart && cart.map(item => (<CartItem item={item} />))}
+//                     </div>
+//                 )}
+//         </>
+//     )
+// }
 
 const Cart = (props) => {
-    const { productList } = props
+    const { cart } = useContext(CartContext);
+    console.log('cart component value:', cart)
     return (
-        <div>
-            {productList && productList.map(item => (<CartItem item={item} />))}
-        </div>
+        <>
+            <div>
+                {cart && cart.map(item => (<CartItem item={item} />))}
+            </div>
+        </>
     )
 }
 

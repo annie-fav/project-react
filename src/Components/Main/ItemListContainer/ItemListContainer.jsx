@@ -1,17 +1,15 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
+import { useParams } from 'react-router-dom'
 import { CircleLoader } from 'react-spinners';
 
 import ItemList from './ItemList';
-import './ItemListContainer.css';
 
-import { useParams } from 'react-router-dom'
+import './ItemListContainer.css';
 
 
 const ItemListContainer = (props) => {
-    const { welcome, setSelectedId } = props;
-
+    const { welcome } = props;
     let { IdCategory } = useParams();
 
     const [items, setItemList] = useState([])
@@ -36,7 +34,6 @@ const ItemListContainer = (props) => {
                 return parsedData
             })
             .then((data) => {
-                console.log(data)
                 setLoading(false)
                 if (IdCategory) {
                     const filteredItems = data.filter(product => product.category === IdCategory)
@@ -52,11 +49,11 @@ const ItemListContainer = (props) => {
     return (
         <div className=''>
             <div>
-                <p className="Welcome"> {welcome} </p>
+                <p className="Welcome">{welcome}</p>
             </div>
             <br></br>
             <div>
-                {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemList setSelectedId={setSelectedId} items={items} />)}
+                {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemList items={items} />)}
             </div>
         </div>
     )
