@@ -6,39 +6,47 @@ import './ItemDetail.css';
 
 const COLOR_OPTIONS = [
     {
-        label: "Apple",
-        value: "apple",
+        label: "White",
+        value: "White",
     },
     {
-        label: "Mango",
-        value: "mango",
+        label: "Red",
+        value: "Red",
     },
     {
-        label: "Banana",
-        value: "banana",
+        label: "Yellow",
+        value: "Yellow",
     },
     {
-        label: "Pineapple",
-        value: "pineapple",
+        label: "Blue",
+        value: "Blue",
+    },
+    {
+        label: "Green",
+        value: "Green",
     },
 ];
 
 const SIZE_OPTIONS = [
     {
-        label: "Apple",
-        value: "apple",
+        label: "XS",
+        value: "XS",
     },
     {
-        label: "Mango",
-        value: "mango",
+        label: "S",
+        value: "S",
     },
     {
-        label: "Banana",
-        value: "banana",
+        label: "M",
+        value: "M",
     },
     {
-        label: "Pineapple",
-        value: "pineapple",
+        label: "L",
+        value: "L",
+    },
+    {
+        label: "XL",
+        value: "XL",
     },
 ];
 
@@ -93,7 +101,7 @@ const ItemDetail = (props) => {
                                 ))}
                             </select>
                         </button>
-                        <button id="button-price">{item.price}</button>
+                        <button id="button-price">$${item.price}</button>
                     </div>
                 </div>
                 {!isBought ? <ItemCount contador={contador} setContador={setContador} stock={9} isBought={isBought} setIsBought={setIsBought} /> : null}

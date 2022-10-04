@@ -13,7 +13,7 @@ const CartItem = (props) => {
                 <p className="cart-title" key={item.item.id}> Name: {item.item.title} </p>
                 <p className="cart-color" > Color: {item.config.color}</p>
                 <p className="cart-size" > Size: / {item.config.size}</p>
-                <button className="button-cart" onClick={() => removeItem(item.item.id)}>Remove</button>
+                <button className="button-remove" onClick={() => removeItem(item.item.id)}>Remove</button>
             </div>
             <hr />
         </>

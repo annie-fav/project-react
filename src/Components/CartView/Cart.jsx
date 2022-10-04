@@ -23,7 +23,7 @@ const ContainerTotalPrice = (props) => {
         <div className="container-total">
             <p className="total-price">Total Price: {total} $$</p>
             <button className="button-clear" onClick={() => clearCart()}>Clear All</button>
-            <button className="button-clear" onClick={() => buy()}>Terminate</button>
+            <button className="button-terminate" onClick={() => buy()}>Terminate</button>
         </div>
     )
 }
@@ -42,7 +42,7 @@ const Cart = (props) => {
         <>
             <div>
                 {cart && cart.length > 0 ? cart.map(item => (<CartItem item={item} removeItem={removeItem} />)) :
-                    <h1 className="cart-message">You didn't put anything in the cart, please click <Link to="/">here</Link> to go to Home .*</h1>}
+                    <h1 className="cart-message">You didn't put anything in the cart, please click: <Link to="/">here</Link> to go to Home .*</h1>}
             </div>
             {total > 0 ?
                 <ContainerTotalPrice total={total} clearCart={clear} />
