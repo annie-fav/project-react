@@ -42,7 +42,7 @@ const CartProvider = ({ children }) => {
     }
 
     const removeItem = (_id) => {
-        const arrayFilter = cart.filter((item) => { return item.id !== _id })
+        const arrayFilter = cart.filter((item) => { return item.item.id !== _id })
         setCart([...arrayFilter]);
     }
 
