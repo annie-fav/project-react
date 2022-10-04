@@ -4,17 +4,64 @@ import swal from 'sweetalert'
 import ItemCount from './ItemCount'
 import './ItemDetail.css';
 
+const COLOR_OPTIONS = [
+    {
+        label: "Apple",
+        value: "apple",
+    },
+    {
+        label: "Mango",
+        value: "mango",
+    },
+    {
+        label: "Banana",
+        value: "banana",
+    },
+    {
+        label: "Pineapple",
+        value: "pineapple",
+    },
+];
+
+const SIZE_OPTIONS = [
+    {
+        label: "Apple",
+        value: "apple",
+    },
+    {
+        label: "Mango",
+        value: "mango",
+    },
+    {
+        label: "Banana",
+        value: "banana",
+    },
+    {
+        label: "Pineapple",
+        value: "pineapple",
+    },
+];
+
 const ItemDetail = (props) => {
     const { item, addItemToCart, quantity } = props
 
     const [contador, setContador] = useState(0)
     const [isBought, setIsBought] = useState(false)
-    
+
+    const [color, setColor] = useState('white')
+    const handleColorChange = (e) => {
+        setColor(e.target.value);
+    }
+
+    const [size, setSize] = useState('XS')
+    const handleSizeChange = (e) => {
+        setSize(e.target.value);
+    }
 
     const addToCart = () => {
         if (contador >= 1) {
             setIsBought(true);
-            addItemToCart(item, contador);
+            addItemToCart(item, contador, { size, color });
             swal({
                 title: "Good job!",
                 text: `You added ${contador} products, Yayyy!`,
@@ -33,30 +80,27 @@ const ItemDetail = (props) => {
                     <img id="img-detail" src={item.img} alt={item.id} />
                     <div id="select">
                         <button id="p-color">Choose a Color:
-                            <select>
-                                <option>Red</option>
-                                <option>Yellow</option>
-                                <option>Green</option>
-                                <option>Blue</option>
+                            <select value={color} onChange={handleColorChange}>
+                                {COLOR_OPTIONS.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                ))}
                             </select>
                         </button>
                         <button id="p-size">Choose a Size:
-                            <select>
-                                <option>XS</option>
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
+                            <select value={size} onChange={handleSizeChange}>
+                                {SIZE_OPTIONS.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                ))}
                             </select>
                         </button>
                         <button id="button-price">{item.price}</button>
                     </div>
                 </div>
-                {!isBought ? <ItemCount contador={contador} setContador={setContador} stock={9} isBought={isBought} setIsBought={setIsBought} /> : null }
-                {!isBought ? (<button className="AddtoCart" onClick={addToCart}>Add to Cart</button>) : 
-                (<Link to="/cart">
-                    <button className="AddtoCart">Go to Checkout</button>
-                </Link>)}
+                {!isBought ? <ItemCount contador={contador} setContador={setContador} stock={9} isBought={isBought} setIsBought={setIsBought} /> : null}
+                {!isBought ? (<button className="AddtoCart" onClick={addToCart}>Add to Cart</button>) :
+                    (<Link to="/cart">
+                        <button className="AddtoCart">Go to Checkout</button>
+                    </Link>)}
 
             </div>
         </div>

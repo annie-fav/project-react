@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
     const [quantity, setQuantity] = useState(0)
-    
+
     // Funciones que se ejecutan cuando cambia el estado del cart
     // Para recalcular valores
     const updateQuantity = () => {
@@ -26,14 +26,14 @@ const CartProvider = ({ children }) => {
 
     // Funciones principales para cambiar el estado
     // del cart
-    const addItem = (item, quantity) => {
-        console.log('add item executed, values to save:', { item, quantity })
+    const addItem = (item, quantity, config) => {
+        console.log('add item executed, values to save:', { item, quantity, config })
         console.log('cart', cart) // []
 
         const itemIndex = cart.findIndex(itemCart => itemCart.item.id === item.id)
 
         if (itemIndex === -1) {
-            const newItem = { item, quantity }
+            const newItem = { item, quantity, config }
             setCart([...cart, newItem])
         } else {
             cart[itemIndex].quantity = quantity
@@ -61,7 +61,5 @@ const CartProvider = ({ children }) => {
         </CartContext.Provider>
     )
 }
-
-// CartProvider.name = 'CartProvider'
 
 export default CartProvider

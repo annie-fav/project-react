@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { CartContext } from '../../../Context/CartContext';
 
 const ItemDetailContainer = (props) => {
-  const { cart, addItem, removeItem, isInCart, clear, quantity } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const [item, setItem] = useState(null)
   const [loading, setLoading] = useState(true)
