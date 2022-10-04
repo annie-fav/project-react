@@ -70,8 +70,8 @@
 .containerButton {
     display: inline-flex;
     width: 30%;
-    margin-top: 7%;
-    margin-left: 18%;
+    margin-top: 15%;
+    margin-left: 20%;
 }
 
 /* #hr-button {
@@ -80,7 +80,7 @@
 
 
 .pContador {
-    margin-left: 90px;
+    margin-left: 70%;
     text-align: center;
     margin-top: 0px;
     font-weight: bold;
@@ -97,7 +97,7 @@
 }
 
 .buttonRight {
-    margin-left: 65%;
+    margin-left: 60%;
     width: 50%;
     height: 6%;
     background-color: white;

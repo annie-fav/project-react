@@ -17,4 +17,72 @@
 
 .cartItem {
     display: inline-flex;
+    margin-left: 20px;
+}
+
+.cart-name {
+    color: pink;
+    margin-left: 40px;
+    margin-top: -40px;
+    font-size: 24px;
+}
+
+.cart-price {
+    color: pink;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.cart-quantity {
+    color: pink;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.cart-title {
+    color: pink;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.cart-color {
+    color: pink;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.cart-size {
+    color: pink;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.button-cart {
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 70px;
+    height: 40px;
+}
+
+.button-clear {
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 70px;
+    height: 40px;
+}
+
+.cart-message {
+    color: pink;
+    font-size: 24px;
+}
+
+.container-total {
+    display: inline-flex;
+    margin-left: 20px;
+}
+
+.total-price {
+    color: pink;
+    margin-left: 40px;
+    font-size: 24px;
 }
