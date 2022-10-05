@@ -5,6 +5,10 @@ import { CircleLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
 
 import { CartContext } from '../../../Context/CartContext';
+import { db } from "../../../Firebase/Firestore"
+import { doc, getDocs, collection } from "firebase/firestore"
+
+
 
 const ItemDetailContainer = (props) => {
   const { addItem } = useContext(CartContext);
@@ -17,23 +21,43 @@ const ItemDetailContainer = (props) => {
   useEffect(() => {
     setLoading(true);
 
-    fetch('/data.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then((response) => {
-        const data = response.json()
-        return data
+    const producstCollection = collection(db, "products");
+    const refDoc = doc(producstCollection, IdDetail)
+
+    getDocs(refDoc)
+      .then((result) => {
+        return setItem({
+          id: result.id,
+          ...result.data(),
+        })
       })
-      .then((data) => {
-        console.log(data)
-        setLoading(false)
-        setItem(data.find(x => x.id === Number(IdDetail)))
+      .catch((e) => { 
+        // setError(true) 
+        console.log(e)
+      })
+      .finally(() => { 
+        setLoading(false) 
       })
 
-  }, [])
+  }, [IdDetail]);
+
+  //   fetch('/data.json', {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     }
+  //   })
+  //     .then((response) => {
+  //       const data = response.json()
+  //       return data
+  //     })
+  //     .then((data) => {
+  //       console.log(data)
+  //       setLoading(false)
+  //       setItem(data.find(x => x.id === Number(IdDetail)))
+  //     })
+
+  // }, [])
 
   return (
     <>
