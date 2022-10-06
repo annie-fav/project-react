@@ -16,9 +16,6 @@ const ItemListContainer = (props) => {
     const [items, setItemList] = useState([])
     const [loading, setLoading] = useState(true)
 
-    // const URL_BASE = '/data.json'
-
-
     useEffect(() => {
 
         const producstCollection = collection(db, "products");
@@ -35,6 +32,23 @@ const ItemListContainer = (props) => {
             .finally(() => { setLoading(false) })
 
     }, [IdCategory])
+
+    return (
+        <div className=''>
+            <div>
+                <p className="Welcome">{welcome}</p>
+            </div>
+            <br></br>
+            <div>
+                {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemList items={items} />)}
+            </div>
+        </div>
+    )
+}
+
+export default ItemListContainer
+
+ // const URL_BASE = '/data.json'
 
     //     setLoading(true);
 
@@ -62,18 +76,3 @@ const ItemListContainer = (props) => {
 
 
     // }, [IdCategory])
-
-    return (
-        <div className=''>
-            <div>
-                <p className="Welcome">{welcome}</p>
-            </div>
-            <br></br>
-            <div>
-                {loading ? <CircleLoader className="spinner" color="#d636b8" /> : (<ItemList items={items} />)}
-            </div>
-        </div>
-    )
-}
-
-export default ItemListContainer
