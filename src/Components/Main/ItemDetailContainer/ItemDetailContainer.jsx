@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 import { CartContext } from '../../../Context/CartContext';
 import { db } from "../../../Firebase/Firestore"
-import { doc, getDocs, collection } from "firebase/firestore"
+import { doc, getDoc, collection } from "firebase/firestore"
 
 
 
@@ -23,13 +23,15 @@ const ItemDetailContainer = (props) => {
 
     const producstCollection = collection(db, "products");
     const refDoc = doc(producstCollection, IdDetail)
+ 
+    console.log(IdDetail)
 
-    getDocs(refDoc)
+    getDoc(refDoc)
       .then((result) => {
         return setItem({
           id: result.id,
           ...result.data(),
-        })
+        }) 
       })
       .catch((e) => { 
         // setError(true) 
