@@ -2,12 +2,13 @@ import React from 'react';
 
 
 const CartItem = (props) => {
-    const { item, removeItem, quantity } = props
+    const { item, removeItem, /*quantity*/ } = props
     console.log(item)
     return (
         <>
             <hr />
             <div className="cartItem">
+                <img className="cart-img" alt="img-item" src={item.item.img}></img>
                 <p className="cart-price" > Price: $${item.item.price} </p>
                 <p className="cart-quantity">Quantity: {item.quantity} </p>
                 <p className="cart-title" key={item.item.id}> Name: {item.item.title} </p>

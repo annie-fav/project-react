@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
 import ItemCount from './ItemCount'
@@ -51,7 +51,7 @@ const SIZE_OPTIONS = [
 ];
 
 const ItemDetail = (props) => {
-    const { item, addItemToCart, quantity } = props
+    const { item, addItemToCart } = props
 
     const [contador, setContador] = useState(0)
     const [isBought, setIsBought] = useState(false)

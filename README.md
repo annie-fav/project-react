@@ -1,7 +1,9 @@
 
 # Description:
 
-*. My name is Florencia Anabel Vazquez and this is an E-commerce in English of clothes made with React. It's a project for the Coderhouse course 38090.
+* My name is Florencia Anabel Vazquez and this is an E-commerce in English of clothes made with React. It's a project for the Coderhouse course 38090.
+
+> -----------------------------------------------------------------
 
 
 # Getting Started with Create React App

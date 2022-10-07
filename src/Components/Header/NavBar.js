@@ -3,12 +3,12 @@ import '../Header/NavBar.css'
 import logo from '../../Assets/logo.jpg'
 import CartWidget from '../CartView/CartWidget'
 import { Link, NavLink } from 'react-router-dom'
-import { CartContext } from '../../Context/CartContext';
+// import { CartContext } from '../../Context/CartContext';
 
 const NavBar = (props) => {
   const { title } = props;
 
-  const { cart, add, remove, clear, isInlist } = useContext(CartContext);
+  // const { cart, add, remove, clear, isInlist } = useContext(CartContext);
 
   const categorys = [
     { id: 0, name: "T-shirt", ruta:'/categorys/T-Shirt' },
@@ -20,8 +20,10 @@ const NavBar = (props) => {
 
   return (
     <>
+      <div className="container-title"> 
       <img id="logo" src={logo} alt="logo" />
       <h1>{title}</h1>
+      </div>
       <nav>
         {categorys.map((categorys) => {
           return <NavLink className="navbar" key={categorys.id} to={categorys.ruta}>{categorys.name}</NavLink>
