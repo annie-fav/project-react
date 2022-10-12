@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { CircleLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
-
 import { CartContext } from '../../../Context/CartContext';
 import { db } from "../../../Firebase/Firestore"
 import { doc, getDoc, collection } from "firebase/firestore"
@@ -23,8 +22,6 @@ const ItemDetailContainer = (props) => {
 
     const producstCollection = collection(db, "products");
     const refDoc = doc(producstCollection, IdDetail)
- 
-    console.log(IdDetail)
 
     getDoc(refDoc)
       .then((result) => {
@@ -34,7 +31,6 @@ const ItemDetailContainer = (props) => {
         }) 
       })
       .catch((e) => { 
-        // setError(true) 
         console.log(e)
       })
       .finally(() => { 
@@ -42,24 +38,6 @@ const ItemDetailContainer = (props) => {
       })
 
   }, [IdDetail]);
-
-  //   fetch('/data.json', {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json'
-  //     }
-  //   })
-  //     .then((response) => {
-  //       const data = response.json()
-  //       return data
-  //     })
-  //     .then((data) => {
-  //       console.log(data)
-  //       setLoading(false)
-  //       setItem(data.find(x => x.id === Number(IdDetail)))
-  //     })
-
-  // }, [])
 
   return (
     <>

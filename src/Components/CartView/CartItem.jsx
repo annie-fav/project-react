@@ -2,8 +2,8 @@ import React from 'react';
 
 
 const CartItem = (props) => {
-    const { item, removeItem, /*quantity*/ } = props
-    console.log(item)
+    const { item, removeItem } = props
+    
     return (
         <>
             <hr />

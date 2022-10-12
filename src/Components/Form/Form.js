@@ -10,6 +10,7 @@ import { db } from "../../Firebase/Firestore"
 
 const Form = (props) => {
     const { cart, clear } = useContext(CartContext);
+
     const total = cart.reduce((acc, item) => {
         return acc + (item.item.price * item.quantity)
     }, 0)
@@ -32,15 +33,13 @@ const Form = (props) => {
     const buy = (e) => {
         const ventasCollection = collection(db, "sells");
         
-        console.log('starts buy')
         addDoc(ventasCollection, {
             comprador: datos,
             items: cart,
             date: serverTimestamp(),
             total: total,
         })
-            .then(result => {
-                console.log('buy complete');
+            .then(result => {                                       
                 swal({
                     title: "Good job!",
                     text: "Your shop is succes " + datos.Name + " Your ID is: " + result.id + " Congratulations!",
@@ -54,7 +53,6 @@ const Form = (props) => {
                 console.error(e)
             })
     }
-
 
     return (
 
@@ -82,14 +80,12 @@ const Form = (props) => {
                 </form>
                 <div className="container-button">
                    <button type="Submit" className="button" onClick={buy}>Submit</button>
-                   {/* <button  className="button" onClick={handleClickToHome}>Cancel</button> */}
                    <Link className="Link-Home"to="/">Cancel</Link>
                    </div>
                 </Fragment>
                   
         </div>
-    )
-
+    )   
 }
 
 export default Form

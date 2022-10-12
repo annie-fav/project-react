@@ -17,7 +17,6 @@ const Item = (props) => {
                    <button className="seeDetail" >See Detail</button>
                 </Link>
             </div>
-            
         </div>
     )
 }

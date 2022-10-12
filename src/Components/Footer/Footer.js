@@ -6,9 +6,7 @@ const Footer = () => {
         <footer>
             <hr></hr>
             <p id="author">Florencia Anabel Vazquez</p>
-        
         </footer>
-
     )
 }
 

@@ -106,10 +106,7 @@ const ItemDetail = (props) => {
                 </div>
                 {!isBought ? <ItemCount contador={contador} setContador={setContador} stock={9} isBought={isBought} setIsBought={setIsBought} /> : null}
                 {!isBought ? (<button className="AddtoCart" onClick={addToCart}>Add to Cart</button>) :
-                    (<Link to="/cart">
-                        <button className="AddtoCart">Go to Checkout</button>
-                    </Link>)}
-
+                    (<Link to="/cart"> <button className="AddtoCart">Go to Checkout</button> </Link>)}
             </div>
         </div>
     )

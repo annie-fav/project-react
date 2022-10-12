@@ -8,8 +8,6 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [quantity, setQuantity] = useState(0)
 
-    // Funciones que se ejecutan cuando cambia el estado del cart
-    // Para recalcular valores
     const updateQuantity = () => {
         let _quantity = 0;
         cart.forEach((item) => {
@@ -24,8 +22,6 @@ const CartProvider = ({ children }) => {
         updateQuantity()
     }, [cart])
 
-    // Funciones principales para cambiar el estado
-    // del cart
     const addItem = (item, quantity, config) => {
         console.log('add item executed, values to save:', { item, quantity, config })
         console.log('cart', cart) // []
@@ -61,5 +57,6 @@ const CartProvider = ({ children }) => {
         </CartContext.Provider>
     )
 }
+
 
 export default CartProvider

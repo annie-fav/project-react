@@ -2,8 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: solid;
-    border-color: white;
     margin-left: 20px;
 }
 
@@ -19,7 +17,7 @@
     border-color: rgb(196, 106, 179);
     width: 240px;
     height: 390px;
-    margin-left: 4%;
+    margin-left: 10px;
     margin-top: 5%;
     margin-right: 5%;
     margin-bottom: 4%;
@@ -99,7 +97,6 @@ hr {
     width: 230px;
     height: 35px;
     background-color: black;
-    /* border-style: solid; */
     border-color: black;
     border-radius: 40px;
     color: rgb(203, 29, 136);

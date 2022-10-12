@@ -9,17 +9,17 @@
 }
 
 h1 {
-    margin-top: 120px;;
+    padding: 25px;
+    margin-top: 24px;
     margin-left: -5%;
     font-style: italic;
     font-size: 45px;
-    /* text-decoration: underline; */
 }
   
 nav {
     display: inline-flex;
-    margin-left: 50%;
-    margin-top: -50px;
+    margin-left: 30%;
+    margin-top: -70px;
 }
 
 a {
@@ -40,6 +40,7 @@ a {
 }
 
 hr {
+    margin-top: 20px;
     color: pink;
 }
 
