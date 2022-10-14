@@ -13,19 +13,14 @@ const CartProvider = ({ children }) => {
         cart.forEach((item) => {
             _quantity = _quantity + item.quantity
         })
-        console.log('por aca se configura quantity')
         setQuantity(_quantity)
     }
 
     useEffect(() => {
-        console.log('cart changed event', cart)
         updateQuantity()
     }, [cart])
 
     const addItem = (item, quantity, config) => {
-        console.log('add item executed, values to save:', { item, quantity, config })
-        console.log('cart', cart) // []
-
         const itemIndex = cart.findIndex(itemCart => itemCart.item.id === item.id)
 
         if (itemIndex === -1) {
