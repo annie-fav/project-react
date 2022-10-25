@@ -19,7 +19,7 @@ const NavBar = (props) => {
     <>
       <div className="container-title"> 
       <img id="logo" src={logo} alt="logo" />
-      <h1>{title}</h1>
+      <h1 id="title">{title}</h1>
       </div>
       <nav>
         {categorys.map((categorys) => {

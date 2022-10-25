@@ -8,10 +8,10 @@
     margin-left: 3%;
 }
 
-h1 {
-    padding: 25px;
-    margin-top: 24px;
-    margin-left: -5%;
+#title {
+    padding: 40px;
+    margin-left: -10%;
+    margin-top: 100px;
     font-style: italic;
     font-size: 45px;
 }
@@ -19,7 +19,7 @@ h1 {
 nav {
     display: inline-flex;
     margin-left: 10%;
-    margin-top: -70px;
+    margin-top: -60px;
 }
 
 a {
