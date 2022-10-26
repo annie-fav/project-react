@@ -16,12 +16,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.REACT_APP_env.FIREBASE_API_KEY ||  "",
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "",
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "",
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || "",
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || "",
-  appId: process.env.REACT_APP_FIREBASE_APP_ID || "",
+  apiKey: "AIzaSyD4SfS1MAbicu19JMhG88jGKmVBlJmiz68",
+  authDomain: "react-annie.firebaseapp.com",
+  projectId: "react-annie",
+  storageBucket: "react-annie.appspot.com",
+  messagingSenderId: "32985259473",
+  appId: "1:32985259473:web:0df5d2604848728436d4f0"
 };
 
 // Initialize Firebase
